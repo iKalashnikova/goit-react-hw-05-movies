@@ -28,12 +28,12 @@ useEffect(() => {
       .catch(error => console.error(error));
   }, [movieId]);
 
-  const { title, vote_average, overview, genres } = movieDetails || {};
+  const { title, vote_average, overview, genres, poster_path } = movieDetails || {};
 
   return (
     <div>
       <Link to={BackLinkLocation}>Повернутись назад</Link>
-      <img src={'#'} alt="#" />
+      <img src={`http://image.tmdb.org/t/p/w400/${poster_path}`} alt="#" />
       <h2>Назва фільму: {title} </h2>
           <p>рейтинг { vote_average}</p>
       <h3> Overview</h3>
