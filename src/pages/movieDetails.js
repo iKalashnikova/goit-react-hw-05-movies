@@ -27,16 +27,16 @@ useEffect(() => {
       .catch(error => console.error(error));
   }, [movieId]);
 
-//   const { title, rating, overview, genres } = movieDetails;
+  const { title, rating, overview } = movieDetails || {};;
 
   return (
     <div>
       <Link to={BackLinkLocation}>Повернутись назад</Link>
       <img src="#" alt="#" />
-      <h2>Назва фільму: </h2>
-      <p>рейтинг</p>
+      <h2>Назва фільму: {title} </h2>
+          <p>рейтинг { rating}</p>
       <h3> Overview</h3>
-      <p>опис</p>
+      <p>{overview}</p>
       <h4>Genres</h4>
       <p>жанри</p>
       <div>
