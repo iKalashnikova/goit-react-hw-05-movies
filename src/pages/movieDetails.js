@@ -9,12 +9,13 @@ const MovieDetails = () => {
 
     const {movieId} = useParams();
     console.log({ movieId });
+
     
-    
+
     return <div> 
         <Link to={BackLinkLocation}>Повернутись назад</Link>
         <img src="#" alt = "#"/>
-        <h2>Назва фільму: {movieId}</h2>
+        <h2>Назва фільму: </h2>
         <p>рейтинг</p>
         <h3> Overview</h3>
         <p>опис</p>
