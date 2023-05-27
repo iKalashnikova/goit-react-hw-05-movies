@@ -6,7 +6,8 @@ const MovieDetails = () => {
   const BackLinkLocation = useRef(location.state?.from ?? '/movies');
 
   const { movieId } = useParams();
-  const [movieDetails, setMovieDetails] = useState(null);
+    const [movieDetails, setMovieDetails] = useState(null);
+    
 
 useEffect(() => {
     const options = {
@@ -27,24 +28,29 @@ useEffect(() => {
       .catch(error => console.error(error));
   }, [movieId]);
 
-  const { title, rating, overview } = movieDetails || {};;
+  const { title, vote_average, overview, genres } = movieDetails || {};
 
   return (
     <div>
       <Link to={BackLinkLocation}>Повернутись назад</Link>
-      <img src="#" alt="#" />
+      <img src={'#'} alt="#" />
       <h2>Назва фільму: {title} </h2>
-          <p>рейтинг { rating}</p>
+          <p>рейтинг { vote_average}</p>
       <h3> Overview</h3>
       <p>{overview}</p>
       <h4>Genres</h4>
-      <p>жанри</p>
+      {genres && (
+  <ul>
+    {genres.map(genre => (
+      <li key={genre.id}>{genre.name}</li>
+    ))}
+  </ul>
+)}
       <div>
-        {' '}
+    
         <h5>Additional information</h5>
         <ul>
           <li>
-            {' '}
             <Link to="Cast">Cast</Link>
           </li>
           <li>
