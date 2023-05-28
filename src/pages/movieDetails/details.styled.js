@@ -6,7 +6,7 @@ export const MovieDetailsContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 20px;
-  max-width: 1600px;
+  // max-width: 1600px;
     margin: 0 auto;
    
 `;
@@ -19,9 +19,9 @@ export const BackLink = styled(Link)`
   `
 
 export const MovieImage = styled.div`
-width: 100%;
+// width: 100%;
     height: auto;
-    margin-right: 10px;
+    margin-right: 30px;
 `;
 
 export const MovieInfo = styled.div`

@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 
 export const HomeDiv = styled.div`
  display: flex;
-  justify-content: center;
-  align-items: center;
+  // justify-content: center;
+  // align-items: center;
 `
 
 export const MovieList = styled.ul`
