@@ -30,9 +30,11 @@ export const ListItem = styled.li`
 `;
 
 export const LinkStyled = styled(Link)`
+ text-decoration: none;
   color: #007bff;
-  text-decoration: none;
   font-weight: bold;
-  &:hover {
+  
+   &:hover {
     color: #ff0000;
+  }
 `;

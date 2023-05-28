@@ -2,6 +2,7 @@ import styled from "@emotion/styled";
 
 export const ReviewContainer = styled.div`
   margin-bottom: 20px;
+  margin-right: 30px;
 `;
 
 export const Author = styled.h2`

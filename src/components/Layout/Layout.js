@@ -11,7 +11,7 @@ const Layout = () => {
             <NavLinkStyled to="/">Home</NavLinkStyled>
           </NavItem>
           <NavLinkStyled>
-            <NavLink to="/movies">Movies</NavLink>
+            <NavLinkStyled to="/movies">Movies</NavLinkStyled>
           </NavLinkStyled>
         </NavList>
       </HeaderStyle>
