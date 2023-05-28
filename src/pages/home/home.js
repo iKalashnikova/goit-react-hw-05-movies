@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
+import { HomeDiv, MovieList, MovieItem, MovieLink } from "./home.styled";
 
 const Home = () => {
     const [movies, setMovies] = useState([]);
@@ -21,16 +22,16 @@ const Home = () => {
     }, [])
     
  
-    return (<div>
+    return (<HomeDiv>
         
-        <ul>{movies.map(movie => <li key={movie.id}>
-            <Link
+        <MovieList>{movies.map(movie => <MovieItem key={movie.id}>
+            <MovieLink
                 to={`/movies/${ movie.id}`}
             >
               {movie.title}
-            </Link></li>)}
-        </ul>
-    </div>
+            </MovieLink></MovieItem>)}
+        </MovieList>
+    </HomeDiv>
     )
 }
 

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import {ReviewContainer, Author, Content, ReviewList , ReviewItem} from './Reviews.styled'
 
 const Reviews = () => {
     const { movieId } = useParams();
@@ -22,16 +23,18 @@ fetch(`https://api.themoviedb.org/3/movie/${movieId}/reviews?language=en-US&page
 
     
       return (
-        <div>
-            <ul>
-                {reviews.map(review => (
-                    <li key={review.id}>
-                        <h2>Author: {review.author}</h2>
-                        <p>{review.content}</p>
-                    </li>
-                ))}
-            </ul>
-        </div>
+          <ReviewContainer>
+              <ReviewList>
+                  {reviews.length>0
+                ? reviews.map(review => (
+                    <ReviewItem key={review.id}>
+                        <Author>Author: {review.author}</Author>
+                        <Content>{review.content}</Content>
+                    </ReviewItem>
+                  ))
+                   : "Sorry, we don't have any review for this movie"}
+            </ReviewList>
+        </ReviewContainer>
     );
 }
 
