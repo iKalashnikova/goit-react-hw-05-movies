@@ -25,6 +25,7 @@ const MovieDetails = () => {
 
   const { movieId } = useParams();
   const [movieDetails, setMovieDetails] = useState(null);
+  const [showAdditionalInfo, setShowAdditionalInfo] = useState(false);
 
   useEffect(() => {
     const options = {
@@ -44,6 +45,10 @@ const MovieDetails = () => {
       .then(data => setMovieDetails(data))
       .catch(error => console.error(error));
   }, [movieId]);
+
+const toggleAdditionalInfo = () => {
+    setShowAdditionalInfo(!showAdditionalInfo);
+  };
 
   const { title, vote_average, overview, genres, poster_path } =
     movieDetails || {};
@@ -77,13 +82,13 @@ const score = vote_average * 10;
         <AdditionalInfoTitle>Additional Info</AdditionalInfoTitle>
         <AdditionalInfoList>
           <AdditionalInfoItem>
-            <AdditionalInfoLink to="Cast">Cast</AdditionalInfoLink>
+            <AdditionalInfoLink to="Cast" onClick={toggleAdditionalInfo}>Cast</AdditionalInfoLink>
           </AdditionalInfoItem>
           <AdditionalInfoItem>
-            <AdditionalInfoLink to="Reviews">Reviews</AdditionalInfoLink>
+            <AdditionalInfoLink to="Reviews" onClick={toggleAdditionalInfo}>Reviews</AdditionalInfoLink>
           </AdditionalInfoItem>
         </AdditionalInfoList>
-        <Outlet />
+        {showAdditionalInfo && <Outlet />}
       </AdditionalInfo>
     </MovieDetailsContainer>
   );

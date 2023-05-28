@@ -6,6 +6,7 @@ export const SearchContainer = styled.div`
 `;
 
 export const InputEl = styled.input`
+outline:transparent;
   padding: 5px;
   font-size: 16px;
 `;

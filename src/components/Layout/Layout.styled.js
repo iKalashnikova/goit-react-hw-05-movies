@@ -21,12 +21,14 @@ export const NavList = styled.ul`
 export const NavItem = styled.li`
   display: inline-block;
   margin-right: 10px;
+  
 `;
 
 export const NavLinkStyled = styled(NavLink)`
   text-decoration: none;
   color: #000;
   font-weight: bold;
+  font-size: 32px;
   transition: color 0.3s;
 
   &:hover {
